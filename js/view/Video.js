@@ -67,7 +67,13 @@ Views.Extend('View.Video', function(data) {
 				}
 				return false;
 			}
-			return value >= this.time;
+
+			if(self.video.play) {
+				return value >= this.time;
+			} else {
+				// Note that when clicking the annotation icon in the seekerbar the position given by browser is of by 10
+				return Math.abs(value - this.time) < 20;
+			}
 		});
 
 		if(a.length > 0) {
@@ -110,8 +116,6 @@ Views.Extend('View.Video', function(data) {
 		self.annotationSurface.style.height = rect.height + 'px';
 		//self.videoElement.style.transform = 'rotate3d(' + rect.width + ', ' + rect.height + ', ' + rect.width / 2 + ', -' + rect.width + 'deg)';
 	});
-
-
 
 	this.resizeAction = function() {
 		var rect = this.e.getBoundingClientRect();
@@ -164,5 +168,4 @@ Views.Extend('View.Video', function(data) {
 		video: this.video
 	});
 	this.e.appendChild(this.controller.e);
-}, {
-});
+}, {});
