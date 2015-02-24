@@ -1,0 +1,489 @@
+body {
+	font-family: "Helvetica";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+
+#player {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: black;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+#dragExample {
+	position: absolute;
+	top: 10%;
+	width: 80%;
+	height: 80%;
+	left: 10%;
+	border-radius: 40px;
+	border: 6px dashed #999;
+	text-align: center;
+	display: table;
+	box-sizing: border-box;
+	z-index: 1001;
+}
+
+#dragExample span {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 28px;
+	color: #999;
+	font-weight: bold;
+}
+
+#dragExample.hover, #dragExample.hover span {
+	border-color: rgba(44, 78, 67, 1);
+	color: rgba(44, 78, 67, 1);
+}
+
+#video {
+	width: 100%;
+	height: auto;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#controls {
+	position: absolute;
+	bottom: 4px;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.7);
+	transition: 0.3s all;
+	height: auto;
+}
+
+#controls.hidden {
+	bottom: -50px;
+}
+
+#playButton {
+	position: absolute;
+	left: 0;
+	width: 50px;
+	top: 0;
+	bottom: 0;
+	cursor: pointer;
+}
+
+#playButton svg {
+	opacity: 0.7;
+}
+
+#playButton:hover svg {
+	opacity: 1;
+}
+
+#videoSeeker {
+	position: absolute;
+	left: 65px;
+	right: 15px;
+	top: 50%;
+	height: 4px;
+	margin-top: -2px;
+	border-radius: 2px;
+	bottom: auto;
+	background: rgba(255,255,255,0.4);
+}
+
+#videoPlayhead {
+	position: absolute;
+	height: 16px;
+	width: 16px;
+	margin-top: -6px;
+	border-radius: 8px;
+	background: rgba(255,255,255,0.7);
+	cursor: grab;
+	margin-left: -8px;
+	z-index: 2;
+}
+
+#videoPlayhead:hover {
+	background: rgba(255,255,255,1);
+}
+
+#videoSeeker div.Annotation {
+	position: absolute;
+	border: 2px solid rgba(44, 78, 67, 1);
+	background: rgba(44, 78, 67, 0.7);
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	margin-left: -10px;
+	box-sizing: border-box;
+	margin-top: -8px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#videoContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+#videoContainer div.Annotation {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	margin-left: -20px;
+	border: 4px solid rgba(44, 78, 67, 1);
+	-webkit-transform: rotate(4deg);
+}
+
+#pauseTimer {
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 4px;
+	background: rgb(0,0,0);
+}
+
+#fullscreen {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: black;
+}
+
+#pauseProgress {
+	transition-property: all;
+	position: absolute;
+	height: 4px;
+	left: 0;
+	background: rgba(44, 78, 67, 1);
+	width: 0;
+	bottom: 0;
+}
+
+#pauseProgress.full {
+	width: 100%;
+}
+
+#toolbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	transition: 0.3s all;
+	overflow: hidden;
+	background: rgba(44, 78, 67, 1);
+	z-index: 2;
+}
+
+#toolbar.hidden {
+	top: -50px;
+}
+
+#toolbar h1 {
+	color: white;
+	margin: 0;
+	margin-left: 20px;
+	line-height: 50px;
+	font-size: 24px;
+	letter-spacing: 0.05em;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+#subtitles {
+	color: white;
+	position: relative;
+	text-align: center;
+	font-size: 20px;
+}
+
+#subtitles div.Subtitle {
+	padding: 12px 10px;
+	margin-bottom: 4px;
+}
+
+div.ControlsContainer {
+	position: relative;
+	height: 50px;
+	width: 100%;
+}
+
+#sidebar {
+	border-right: 2px solid rgba(44, 78, 67, 1);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 198px;
+	bottom: 0;
+	background: white;
+	z-index: 2;
+}
+
+#sidebar h2 {
+	color: white;
+	background: rgba(44, 78, 67, 1);
+	margin: 0;
+	padding: 11px;
+}
+
+#sidebar ul {
+	padding: 0;
+	margin: 0;
+}
+
+#sidebar ul li {
+	font-size: 14px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+	overflow: hidden;
+	padding: 5px;
+	cursor: pointer;
+	border-bottom: 1px solid #999;
+}
+
+#sidebar ul li:hover {
+	text-decoration: underline;
+}
+
+#loginState {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 198px;
+	text-align: center;		
+	height: 40px;
+	z-index: 3;
+	background: rgba(44, 78, 67, 1);
+	color: white;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+#loadingArea {
+	background: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	display: none;
+}
+
+#loadingPercent {
+	position: absolute;
+	text-align: center;
+	left: 0;
+	right: 0;
+	top: 50%;
+	margin-top: 40px;
+	font-size: 26px;
+	padding-left: 6px;
+	color: rgba(44, 78, 67, 1);
+	font-weight: bold;
+}
+
+#loginInfo {
+	color: rgb(140,140,140);
+	padding: 10px;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 16px;
+}
+
+#videoList {
+	position: absolute;
+	top: 50px;
+	bottom: 40px;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+}
+
+div.Player {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: red;
+}
+
+div.Player div.Toolbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
+	height: 50px;
+	background: white;
+	overflow: hidden;
+	border-bottom : 3px solid #408080;
+	padding: 0 20px;
+}
+
+div.Player div.Toolbar h1 {
+	float: left;
+	line-height: 48px;
+	margin: 0;
+	padding: 0;
+	padding-top: 4px;
+}
+
+div.Player div.Toolbar div.Button {
+	float: right;
+	margin-top: 11px;
+}
+
+div.Button {
+	display: inline-block;
+	background: #408080;
+	font-size: 16px;
+	color: #FFF;
+	padding: 6px 10px;
+	padding-top: 8px;
+	margin: 0 4px;
+	cursor: pointer;
+}
+
+div.Button.disabled {
+	opacity: 0.7;
+}
+
+div.VideoContainer {
+	position: absolute;
+	top:53px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	background: rgb(0,0,0);
+}
+
+div.VideoController {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 30px;
+	background: rgb(255,255,255);
+	z-index: 11;
+}
+
+div.VideoController div.Button {
+	margin-left: 0;
+}
+
+div.VideoController div.SeekerContainer {
+	position: absolute;
+	left: 80px;
+	bottom: 0;
+	right: 10px;
+	top: 0;
+}
+
+div.VideoController input[type=range] {
+	display: block;
+	width: 100%;
+	margin-top: 8px;
+}
+
+div.Progress {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	background: rgba(0,0,0,0.5);
+}
+
+div.Progress progress {
+	display: block;
+	width: 300px;
+}
+
+video {
+    position: relative;
+}
+
+div.AnnotationSurface {
+	position: absolute;
+	z-index: 10;
+}
+
+div.AnnotationSurface div.Annotation {
+	position: absolute;
+	height: 8%;
+	width: 6%;
+	border: 5px solid #408080;
+	border-radius: 100%;
+	box-shadow: 0 0 3px black;
+}
+
+div.SeekerContainer div.Annotation {
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	border-radius: 14px;
+	border: 2px solid #408080;
+	background: rgba(80,126,126,0.4);
+	margin-left: -7px;
+	top: 6px;
+}
+
+div.VideoContainer div.SubtitleSurface {
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	right: 0;
+	top: auto;
+	height: auto;
+	z-index: 12;
+}
+
+div.VideoContainer div.SubtitleSurface div.Subtitle {
+	font-size: 20px;
+	color: rgb(255,255,255);
+	background: rgba(0,0,0,0.6);
+	display: block;
+	text-align: center;
+	padding: 8px 0;
+}
