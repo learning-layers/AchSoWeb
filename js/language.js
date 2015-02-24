@@ -22,7 +22,7 @@
 			'Play': 'Toista',
 			'Pause': 'Pysäytä',
 			'Ok': 'Ok',
-			'error.InvalidFile': 'Valittus tiedostoa ei voitu toistaa'
+			'error.InvalidFile': 'Valittua tiedostoa ei voitu toistaa'
 		}
 	};
 
