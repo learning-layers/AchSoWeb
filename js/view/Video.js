@@ -103,6 +103,7 @@ Views.Extend('View.Video', function(data) {
 				}
 			}
 
+			self.videoElement.currentTime = value / 1000;
 			self.pauseFor(pause);
 		}
 	}).annotations.observe('add', function(value) {
