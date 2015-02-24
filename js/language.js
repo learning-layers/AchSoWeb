@@ -11,14 +11,18 @@
 			'button.OpenLocal': 'Open from Disk',
 			'button.Login': 'Authorize',
 			'Play': 'Play',
-			'Pause': 'Pause'
+			'Pause': 'Pause',
+			'Ok': 'Ok',
+			'error.InvalidFile': 'Could not open file'
 		},
 		fi: {
 			'button.OpenFromService': 'Avaa palvelimelta',
 			'button.OpenLocal': 'Avaa tietokoneelta',
 			'button.Login': 'Kirjaudu',
 			'Play': 'Toista',
-			'Pause': 'Pysäytä'
+			'Pause': 'Pysäytä',
+			'Ok': 'Ok',
+			'error.InvalidFile': 'Valittus tiedostoa ei voitu toistaa'
 		}
 	};
 

@@ -15,13 +15,19 @@
 			done();
 		}));
 
-		document.getElementById('localFile')
-		  .addEventListener('change', function(evt) {
-			  var file = evt.target.files[0];
-			  player.video.readFile(file, function() {
+		document.getElementById('localFile').addEventListener('change', function(evt) {
+			var file = evt.target.files[0];
 
-			  });
-		  });
+			// Check if the file is one of the supported ones
+			if(file.name.indexOf('.achso') != file.name.length - 6) {
+				var dialog = Views.Create('View.Dialog', {text: l('error.InvalidFile')});
+				dialog.show();
+				return this;
+			}
+			player.video.readFile(file, function() {
+
+			});
+		});
 
 		player.toolbar.addButton(Views.Create('View.Button', {
 			text: l('button.OpenFromService'),

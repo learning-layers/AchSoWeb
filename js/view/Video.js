@@ -105,10 +105,6 @@ Views.Extend('View.Video', function(data) {
 	this.resizeEvent = window.addEventListener('resize', function() {
 		self.resizeAction();
 		return this;
-		self.annotationSurface.style.width = rect.width + 'px';
-		self.annotationSurface.style.marginLeft = -1 * rect.width + 'px';
-		self.annotationSurface.style.height = rect.height + 'px';
-		//self.videoElement.style.transform = 'rotate3d(' + rect.width + ', ' + rect.height + ', ' + rect.width / 2 + ', -' + rect.width + 'deg)';
 	});
 
 	this.resizeAction = function() {
