@@ -3,7 +3,7 @@ Base.Video = function(data, callback) {
 		this.readFile(data.file);
 	}
 
-	this.observe('lenght', function(value) {
+	this.observe('length', function(value) {
 		this.ratio = value / 100;
 		this.currentPosition = 0;
 	});
@@ -16,7 +16,7 @@ Base.Video.prototype = {
 	blob: false,
 	play: false,
 	loaded: 0,
-	lenght: 0,
+	length: 0,
 	height: 0,
 	width: 0,
 	currentHeight: 0,
