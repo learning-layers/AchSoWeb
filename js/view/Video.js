@@ -16,6 +16,12 @@ Views.Extend('View.Video', function(data) {
 		self.resizeAction();
 	});
 
+	// Jump back to start of video and pause it when playback ends
+	this.videoElement.addEventListener('ended', function() {
+		self.video.play = false;
+		self.video.currentPosition = 0;
+	});
+
 	this.video = data.video;
 	this.video.observe('blob', function(value) {
 		self.videoElement.src = window.URL.createObjectURL(value);
