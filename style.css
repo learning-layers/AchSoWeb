@@ -33,7 +33,7 @@ body {
 	height: 80%;
 	left: 10%;
 	border-radius: 40px;
-	border: 6px dashed #999;
+	border: 6px dashed #999999;
 	text-align: center;
 	display: table;
 	box-sizing: border-box;
@@ -44,7 +44,7 @@ body {
 	display: table-cell;
 	vertical-align: middle;
 	font-size: 28px;
-	color: #999;
+	color: #999999;
 	font-weight: bold;
 }
 
@@ -69,7 +69,7 @@ body {
 	bottom: 4px;
 	left: 0;
 	right: 0;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0, 0, 0, 0.7);
 	transition: 0.3s all;
 	height: auto;
 }
@@ -104,7 +104,7 @@ body {
 	margin-top: -2px;
 	border-radius: 2px;
 	bottom: auto;
-	background: rgba(255,255,255,0.4);
+	background: rgba(255, 255, 255, 0.4);
 }
 
 #videoPlayhead {
@@ -113,14 +113,14 @@ body {
 	width: 16px;
 	margin-top: -6px;
 	border-radius: 8px;
-	background: rgba(255,255,255,0.7);
+	background: rgba(255, 255, 255, 0.7);
 	cursor: grab;
 	margin-left: -8px;
 	z-index: 2;
 }
 
 #videoPlayhead:hover {
-	background: rgba(255,255,255,1);
+	background: rgba(255, 255, 255, 1);
 }
 
 #videoSeeker div.Annotation {
@@ -165,7 +165,7 @@ body {
 	right: 0;
 	bottom: 0;
 	height: 4px;
-	background: rgb(0,0,0);
+	background: rgb(0, 0, 0);
 }
 
 #fullscreen {
@@ -272,7 +272,7 @@ div.ControlsContainer {
 	overflow: hidden;
 	padding: 5px;
 	cursor: pointer;
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #999999;
 }
 
 #sidebar ul li:hover {
@@ -284,7 +284,7 @@ div.ControlsContainer {
 	bottom: 0;
 	left: 0;
 	width: 198px;
-	text-align: center;		
+	text-align: center;
 	height: 40px;
 	z-index: 3;
 	background: rgba(44, 78, 67, 1);
@@ -318,7 +318,7 @@ div.ControlsContainer {
 }
 
 #loginInfo {
-	color: rgb(140,140,140);
+	color: rgb(140, 140, 140);
 	padding: 10px;
 	text-align: center;
 	padding-top: 20px;
@@ -352,7 +352,7 @@ div.Player div.Toolbar {
 	height: 50px;
 	background: white;
 	overflow: hidden;
-	border-bottom : 3px solid #408080;
+	border-bottom: 3px solid #408080;
 	padding: 0 20px;
 }
 
@@ -373,7 +373,7 @@ div.Button {
 	display: inline-block;
 	background: #408080;
 	font-size: 16px;
-	color: #FFF;
+	color: #FFFFFF;
 	padding: 6px 10px;
 	padding-top: 8px;
 	margin: 0 4px;
@@ -386,12 +386,12 @@ div.Button.disabled {
 
 div.VideoContainer {
 	position: absolute;
-	top:53px;
+	top: 53px;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	display: block;
-	background: rgb(0,0,0);
+	background: rgb(0, 0, 0);
 }
 
 div.VideoController {
@@ -400,7 +400,7 @@ div.VideoController {
 	right: 0;
 	bottom: 0;
 	height: 30px;
-	background: rgb(255,255,255);
+	background: rgb(255, 255, 255);
 	z-index: 11;
 }
 
@@ -432,7 +432,7 @@ div.Progress {
 	left: 0;
 	right: 0;
 	z-index: 100;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0, 0, 0, 0.5);
 }
 
 div.Progress progress {
@@ -441,7 +441,7 @@ div.Progress progress {
 }
 
 video {
-    position: relative;
+	position: relative;
 }
 
 div.AnnotationSurface {
@@ -464,7 +464,7 @@ div.SeekerContainer div.Annotation {
 	height: 14px;
 	border-radius: 14px;
 	border: 2px solid #408080;
-	background: rgba(80,126,126,0.4);
+	background: rgba(80, 126, 126, 0.4);
 	margin-left: -7px;
 	top: 6px;
 }
@@ -481,9 +481,30 @@ div.VideoContainer div.SubtitleSurface {
 
 div.VideoContainer div.SubtitleSurface div.Subtitle {
 	font-size: 20px;
-	color: rgb(255,255,255);
-	background: rgba(0,0,0,0.6);
+	color: rgb(255, 255, 255);
+	background: rgba(0, 0, 0, 0.6);
 	display: block;
 	text-align: center;
 	padding: 8px 0;
+}
+
+div.Dialog {
+	position: fixed;
+	z-index: 1001;
+	width: 300px;
+	height: 60px;
+	margin-top: -40px;
+	margin-left: -160px;
+	top: 50%;
+	left: 50%;
+	background: rgb(255, 255, 255);
+	border-bottom: 3px solid #408080;
+	text-align: center;
+	padding: 20px;
+}
+
+div.Dialog div.Text {
+	margin-bottom: 20px;
+	font-size: 18px;
+	color: rgb(90, 90, 90);
 }

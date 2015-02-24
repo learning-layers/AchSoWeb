@@ -6,8 +6,14 @@ Views.Extend('View', function(data) {
 	},
 	hide: function() {
 		this.e.style.display = 'none';
+		return this;
 	},
 	resetDisplay: function() {
 		this.e.style.display = '';
+		return this;
+	},
+	remove: function() {
+		this.e.parentNode.removeChild(this.e);
+		return this;
 	}
 });
