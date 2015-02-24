@@ -65,6 +65,7 @@ Views.Extend('View.Video', function(data) {
 			if(self.video.play) {
 				return value >= this.time;
 			} else {
+				// Note that when clicking the annotation icon in the seekerbar the position given by browser is of by 10
 				return Math.abs(value - this.time) < 20;
 			}
 		});
