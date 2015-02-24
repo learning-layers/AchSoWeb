@@ -19,7 +19,9 @@
 			var file = evt.target.files[0];
 
 			// Check if the file is one of the supported ones
-			if(file.name.indexOf('.achso') != file.name.length - 6) {
+			var allowedTypes = ['achso'];
+
+			if(allowedTypes.indexOf(file.name.split('.').pop()) === -1) {
 				var dialog = Views.Create('View.Dialog', {text: l('error.InvalidFile')});
 				dialog.show();
 				return this;
