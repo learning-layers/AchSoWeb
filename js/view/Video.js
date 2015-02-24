@@ -9,7 +9,7 @@ Views.Extend('View.Video', function(data) {
 	this.videoElement = document.createElement('video');
 	this.videoElement.addEventListener('loadedmetadata', function(e) {
 		var len = self.videoElement.duration;
-		self.video.lenght = len * 1000;
+		self.video.length = len * 1000;
 		self.video.height = self.videoElement.videoHeight;
 		self.video.width = self.videoElement.videoWidth;
 
@@ -66,6 +66,9 @@ Views.Extend('View.Video', function(data) {
 				return value >= this.time;
 			} else {
 				// Note that when clicking the annotation icon in the seekerbar the position given by browser is of by 10
+				if(this.time < value) {
+					this.consumed = true;
+				}
 				return Math.abs(value - this.time) < 20;
 			}
 		});

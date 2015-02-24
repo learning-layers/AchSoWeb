@@ -16,7 +16,6 @@ Views.Extend('View.VideoController', function(data) {
 	this.seekerContainer.classList.add('SeekerContainer');
 	this.e.appendChild(this.seekerContainer);
 
-
 	this.video.annotations.observe('add', function(annotation) {
 		var annotationView = Views.Create('View.SeekerAnnotation', {
 			annotation: annotation,
@@ -33,17 +32,30 @@ Views.Extend('View.VideoController', function(data) {
 	this.seeker.step = 0.1;
 	this.seeker.max = 100;
 
+	var pausedByDragging = false;
+
+	// Set video position when user changes the position of seeker
 	this.seeker.addEventListener('change', function() {
 		var value = self.seeker.value;
 		var position = self.video.ratio * value;
 
 		self.video.currentPosition = position;
+
+		// Continue playback if it was paused for dragging
+		if(pausedByDragging) {
+			self.video.play = true;
+		}
 	});
+
+	// Playback will be paused when user is dragging the seeker
+	this.seeker.addEventListener('mousedown', function() {
+		pausedByDragging = self.video.play;
+		self.video.play = false;
+	});
+
 	this.seekerContainer.appendChild(this.seeker);
 
 	this.e.classList.add('VideoController');
-
-
 
 	this.video.observe('currentPosition', function(value) {
 		self.seeker.value = value / this.ratio;
@@ -54,5 +66,4 @@ Views.Extend('View.VideoController', function(data) {
 			self.playButton.setText(l('Play'));
 		}
 	});
-}, {
-});
+}, {});
