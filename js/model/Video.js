@@ -27,7 +27,8 @@ Base.Video.prototype = {
 		// Check if the file is one of the supported ones
 		var allowedTypes = ['achso'];
 
-		if(allowedTypes.indexOf(file.name.split('.').pop()) === -1) {
+		var name = file.name || 'achso';
+		if(allowedTypes.indexOf(name.split('.').pop()) === -1) {
 			var dialog = Views.Create('View.Dialog', {text: l('error.InvalidFile')});
 			dialog.show();
 			return this;
