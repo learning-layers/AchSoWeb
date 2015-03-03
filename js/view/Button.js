@@ -8,6 +8,15 @@ Views.Extend('View.Button', function(data) {
 		self.act();
 	});
 
+	if(data.href) {
+		this.a = document.createElement('a');
+		this.a.setAttribute('href', data.href);
+		this.a.setAttribute('target', '_blank');
+		this.a.textContent = data.text;
+		this.e.appendChild(this.a);
+		this.href = data.href;
+	}
+
 	if(data.text) {
 		this.setText(data.text);
 	}
@@ -22,7 +31,11 @@ Views.Extend('View.Button', function(data) {
 		return this;
 	},
 	setText: function(text) {
-		this.e.textContent = text;
+		if(this.a) {
+			this.a.textContent = text;
+		} else {
+			this.e.textContent = text;
+		}
 		return this;
 	},
 	enable: function() {
@@ -39,9 +52,13 @@ Views.Extend('View.Button', function(data) {
 			return this;
 		}
 
+		var limit = this.actions.length;
+		if(limit < 1) {
+			return this;
+		}
+
 		this.disable();
 
-		var limit = this.actions.length;
 		var count = 0;
 		var self = this;
 

@@ -508,3 +508,8 @@ div.Dialog div.Text {
 	font-size: 18px;
 	color: rgb(90, 90, 90);
 }
+
+div.Button a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}

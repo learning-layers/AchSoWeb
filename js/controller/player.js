@@ -3,6 +3,12 @@
 		var player = Views.Create('View.Player', {});
 
 		player.toolbar.addButton(Views.Create('View.Button', {
+			text: '?',
+			name: 'openHelp',
+			href: l('url.Userguide')
+		}));
+
+		player.toolbar.addButton(Views.Create('View.Button', {
 			text: l('button.OpenLocal'),
 			name: 'openLocal'
 		}).addAction(function(done) {
