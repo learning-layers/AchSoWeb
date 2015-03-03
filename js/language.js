@@ -13,7 +13,8 @@
 			'Play': 'Play',
 			'Pause': 'Pause',
 			'Ok': 'Ok',
-			'error.InvalidFile': 'Could not open file'
+			'error.InvalidFile': 'Could not open file',
+			'url.Userguide': 'https://docs.google.com/document/d/1ADy02QCLh2G5kY_Jn6x3WAxDu91Pwn2hVMlrdDJMDdw/edit?usp=sharing'
 		},
 		fi: {
 			'button.OpenFromService': 'Avaa palvelimelta',
@@ -22,7 +23,8 @@
 			'Play': 'Toista',
 			'Pause': 'Pysäytä',
 			'Ok': 'Ok',
-			'error.InvalidFile': 'Valittua tiedostoa ei voitu toistaa'
+			'error.InvalidFile': 'Valittua tiedostoa ei voitu toistaa',
+			'url.Userguide': 'https://docs.google.com/document/d/1ADy02QCLh2G5kY_Jn6x3WAxDu91Pwn2hVMlrdDJMDdw/edit?usp=sharing'
 		}
 	};
 
