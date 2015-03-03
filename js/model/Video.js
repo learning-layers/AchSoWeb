@@ -24,6 +24,15 @@ Base.Video.prototype = {
 	currentPosition: 0,
 	ratio: 1,
 	readFile: function(file, callback) {
+		// Check if the file is one of the supported ones
+		var allowedTypes = ['achso'];
+
+		if(allowedTypes.indexOf(file.name.split('.').pop()) === -1) {
+			var dialog = Views.Create('View.Dialog', {text: l('error.InvalidFile')});
+			dialog.show();
+			return this;
+		}
+
 		var self = this;
 		var reader = new FileReader();
 		reader.onload = function(e) {

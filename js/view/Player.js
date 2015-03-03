@@ -1,6 +1,19 @@
 Views.Extend('View.Player', function(data) {
 	var self = this;
 
+	this.e.addEventListener('drop', function(e) {
+		self.fileDrop(e);
+		e.stopPropagation();
+		e.preventDefault();
+		return false;
+	});
+
+	this.e.addEventListener('dragover', function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		return false;
+	});
+
 	document.getElementsByTagName('body')[0].appendChild(this.e);
 	this.e.classList.add('Player');
 
@@ -26,4 +39,11 @@ Views.Extend('View.Player', function(data) {
 		self.progress.setValue(value);
 	});
 }, {
+	fileDrop: function(e) {
+		var files = e.target.files || e.dataTransfer.files;
+
+		this.video.readFile(files[0], function() {
+
+		});
+	}
 });
