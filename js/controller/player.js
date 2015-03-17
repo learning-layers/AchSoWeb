@@ -55,6 +55,17 @@
 			done();
 		}));
 
+		player.toolbar.addButton(Views.Create('View.Button', {
+			text: l('button.Share'),
+			name: 'share'
+		}).addAction(function(done) {
+			console.log('SHARE');
+			done();
+		}));
+
+		player.toolbar.getButton('share').hide();
+
+
 		GOOGLE_PUBLIC_ACTION.isAuthorized(function(authorized) {
 			if(authorized) {
 				player.toolbar.getButton('login').hide();
