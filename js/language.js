@@ -14,6 +14,7 @@
 			'Pause': 'Pause',
 			'Ok': 'Ok',
 			'error.InvalidFile': 'Could not open file',
+			'MemoryError': 'There was an error while opening the video, please try again.',
 			'url.Userguide': 'https://docs.google.com/document/d/1ADy02QCLh2G5kY_Jn6x3WAxDu91Pwn2hVMlrdDJMDdw/edit?usp=sharing'
 		},
 		fi: {
@@ -24,6 +25,7 @@
 			'Pause': 'Pysäytä',
 			'Ok': 'Ok',
 			'error.InvalidFile': 'Valittua tiedostoa ei voitu toistaa',
+			'MemoryError': 'Videota avattaessa tapahtui virhe, ole hyvä yritä uudelleen.',
 			'url.Userguide': 'https://docs.google.com/document/d/1ADy02QCLh2G5kY_Jn6x3WAxDu91Pwn2hVMlrdDJMDdw/edit?usp=sharing'
 		}
 	};

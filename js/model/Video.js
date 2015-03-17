@@ -45,6 +45,7 @@ Base.Video.prototype = {
 	awakeFromFile: function(input, callback) {
 		var zip = new JSZip(input);
 
+		var video = false;
 		for(var i in zip.files) {
 			var file = zip.files[i];
 
@@ -57,16 +58,25 @@ Base.Video.prototype = {
 			}
 
 			if(file.name.indexOf('.mp4') > -1) {
-				this.createBlob(file);
+				video = file;
 			}
 		}
+
+		zip = false;
+		this.createBlob(video);
 
 		callback.call(this);
 	},
 	createBlob: function(video) {
-		this.blob = new Blob([video.asUint8Array()], {
-			type: 'video/mp4'
-		});
+		var uintarray = video.asArrayBuffer();
+		try {
+			this.blob = new Blob([uintarray], {
+				type: 'video/mp4'
+			});
+		} catch(error) {
+			alert(l('MemoryError'));
+			window.location.reload();
+		}
 
 		return this;
 	},
